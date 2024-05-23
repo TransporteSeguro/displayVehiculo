@@ -1,0 +1,359 @@
+<apex:page standardController="Vehiculo__c" extensions="CallingBPOne2TwoPageController" >
+   <!-- <apex:pageBlock title="Datos Del Vehiculo">.  -->
+  <div class="page-container">
+        <div class="title-box">
+            <div class="rectangle left-rectangle">
+                U N I D A D #                
+            </div>
+            <div class="rectangle right-rectangle">
+                R U T A               
+            </div>             
+        </div>  
+        <div class="display-box">
+            <div class="left-display">
+                <apex:outputText value="{!Vehiculo__c.NumeroEconomico__c}"/>
+            </div>
+            <div class="right-display">
+                <apex:outputText value="{!Vehiculo__c.Ruta__c}"/>
+            </div>
+        </div>   
+        
+        <!-- 
+        <div class="label-box">
+          <div class="label-text">P L A C A S : </div>          
+        </div>
+        <div class="label-info">
+         <apex:outputText value="{!Vehiculo__c.Placas__c}"/>
+        </div>
+        -->
+        
+        <!-- 
+        <div class="label-box">
+          <div class="label-text">C H O F E R</div>         
+        </div>
+         <div class="label-info">
+         <apex:outputText value="{!Vehiculo__c.Nombre_Del_Chofer__c}"/>
+        </div>
+        
+        -->
+        
+        <!--
+        
+        <div class="label-info">
+         <apex:outputText value="{!Vehiculo__c.Organizacion__c}"/>
+        </div>
+        
+        -->
+        
+       <!-- CALIFICAR SERVICIO  -->
+
+ <!--commented by vicente
+ 
+<div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+  <button class="slds-button slds-button_icon" onclick="event.preventDefault();" title="Califica el Servicio" style="width: 80%; height: auto; border-radius: 10px; outline: 3px solid orange; margin-top: 10px; margin-bottom: 10px; background: linear-gradient(to left, #FFD700, #FFA500); padding: 0;">
+    <div style="display: flex; align-items: center; justify-content: center;">
+    <!--Icono comment-->
+    
+    
+  
+  <!--commented by vicente  
+      <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true" style="width: 50px; height: 50px; margin-right: 20px;">
+         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#comments')}" style="fill: white; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4)); border: 1px solid rgba(0,0,0,0.2); border-radius: 5px;"></use>
+      </svg>    
+        <div>
+          <span style="font-family: serif; font-weight: bold; font-size: 16px; color: white; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 2px 2px 2px rgba(0, 0, 0, 0.3);">Califica Este Servicio</span>
+          <br/>
+          <span style="font-family: serif; font-weight: bold; font-size: 16px; color: white; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 2px 2px 2px rgba(0, 0, 0, 0.3);">Del Transporte Público</span>
+      </div> 
+    </div>
+  </button>
+</div>
+
+-->
+       
+        
+        <!--  commented by txmjvqe
+        <apex:form >
+
+    <apex:outputPanel layout="block" style="width: 100%;">
+        <img src="/resource/resource/1715920029000/EstasEnPeligro" alt="Full Width Image" />
+    </apex:outputPanel>
+    
+    
+        <apex:commandButton value="Click Me" styleClass="full-width-button" 
+                            action="{!redirect}" 
+                            image="/resource/1712247505000/logoBotonPanico" 
+                            title="Presiona El Boton Solo En Emergencias"
+                            alt="Image" />
+       
+         
+    </apex:form>
+          
+          
+       -->
+       
+       <!--  <br />    --> 
+   
+
+ </div>          
+ 
+ 
+          
+        
+ <!-- </apex:pageBlock> -->
+    
+    <!-- Estilos -->
+    <style>
+    
+    .page-container {
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+.title-box {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.title-box .rectangle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;                      
+    margin: 0 10px;
+    color: white;/*#08088A*/
+    font-family: arial;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    height: 20px;
+    width: 120px;
+    /*border: 2px solid #B40431;/* Borde rojo */
+}
+
+.left-rectangle {
+    background: linear-gradient(to right, #DF013A, #610B21);
+}
+
+.right-rectangle {
+    background: linear-gradient(to right, #0000FF, #0174DF);
+}
+
+.display-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+    padding: 4px;                                 
+}
+
+.left-display, .right-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;/*#B40431*/
+    font-family: arial;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.left-display {
+    height: 30px;
+    width: 120px;
+    background: linear-gradient(to right, #610B21, #DF013A);/*Rojos*/
+    font-size: 24px;
+}
+
+.right-display {
+    height: 30px;
+    width: 120px;
+    background: linear-gradient(to right, #0174DF, #0000FF);/*Azules*/
+    font-size: 22px;
+}
+        
+.info-container {
+   justify-content: space-between;
+   text-align: center;
+   margin: 5px;
+   display: flex;
+   align-items: center;
+}
+
+.image-left {
+    border: 2px solid #610B21;
+    border-radius: 50%; 
+    width: 100px;
+    height: 100px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 10px;    
+}
+        
+.image-right {
+    border: 2px solid #0174DF;
+    border-radius: 50%;  
+    width: 100px;
+    height: 100px;   
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px;      
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-top: 25px solid #808080;
+    display: inline-block;
+    margin: 10px;
+    transform: rotate(-90deg);
+}
+
+.circular-image {
+    border-radius: 50%; 
+    width: 100px;
+    height: 100px; 
+}
+        
+.info-label {
+    
+    font-family: Arial, sans-serif;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+    font-size: 32px;
+    color: blue;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 15px; 
+    margin-left: 25px; 
+    margin-right: 35px;
+    padding: 15px;  
+    width: 50%;
+    
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.image-value {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 5px; /* Ajusta el valor del margen según necesidades */
+}
+
+.vehiculo-field {
+    font-family: Arial;
+    font-size: 14px;
+    border-bottom: 2px solid #00008B;
+}
+
+.add-info-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.add-info {
+    display: flex;
+    align-items: center;
+}
+
+.add-info-label {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid blue;
+}
+
+.page-container {
+                overflow-x: hidden;
+ }
+ 
+ .info-container > div:nth-child(2) .info-label {
+    margin-top: -46px;
+}
+    .label-box {
+            /*border: 2px solid #B40431; /* Borde rojo */
+            /*border-radius: 10px; /* Borde redondeado */
+            /*padding: 0px; /* Espacio interno */
+            width: 100%; /* Ocupa todo el ancho */
+            max-width: 280px; /* Ancho máximo */
+            margin: 0 auto; /* Centrar horizontalmente */
+            margin-bottom: 5px; /* Espacio entre cajas de etiquetas */
+            margin-top: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+           
+    }
+
+    .label-text {
+        display: flex;
+        color: black; /*Texto color*/
+        font-size: 20px; 
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 8px;
+        align-items: center;
+        
+    }
+    
+    .label-info {
+        color: #08298A; /*Texto azul*/
+        font-size: 22px; 
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;           
+        font-weight: bold;
+       
+    }
+    
+    .full-width-button {
+            width: 100%;
+            background-color: #4CAF50; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 15px 0; /* Some padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Get the element to behave like a button */
+            font-size: 16px; /* Increase font size */
+            margin: 4px 2px; /* Some margin */
+            cursor: pointer; /* Pointer/hand icon */
+        }
+
+        .full-width-button img {
+            vertical-align: middle; /* Center the image vertically */
+            margin-right: 10px; /* Add some space between the image and the text */
+        }
+        
+    
+    .full-width-image {
+            width: 100%; /* Makes the image take up the full width of the viewport */
+            height: auto; /* Maintains the aspect ratio of the image */
+        }
+    
+    </style>
+</apex:page>
